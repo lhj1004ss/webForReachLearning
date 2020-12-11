@@ -1,25 +1,37 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import AddSchedule from './components/AddSchedule';
+import Schedules from './components/Schedules';
 import './App.css';
+import Schedule from './components/Schedule';
 
-function App() {
+const URL = "http://localhost:8000/schedule";
+
+const App = () => {
+  const [schedules, setSchedules] = useState([]);
+  useEffect(() => {
+    axios.get(URL).then(res => setSchedules(res.data.data.schedules))
+  }, [])
+
+  /**
+   * 
+   * @param {object} schedule 
+   */
+  const addSchedule = (schedule) => {
+    //@@ desc create new data
+    schedule.id = schedules.length + 1;
+    setSchedules([...schedules, schedule])
+    axios.post(URL, schedule).then(()=>{
+      alert("data is successfully uploaded");
+    })
+  }
+  console.log(schedules)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  <div className="main-container">
+    <AddSchedule addSchedule={addSchedule} />
+    <Schedules data={schedules} />
+  </div>
+  )
 }
-
+    
 export default App;

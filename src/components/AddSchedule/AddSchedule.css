@@ -1,0 +1,24 @@
+.form-container {
+  padding: 3rem;
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.ids-container {
+  margin-left: 50px;
+}
+.addschedule-container {
+  margin-left: 80px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.addschedule-container .vertical-container {
+  flex: 1;
+  margin-right: 1rem;
+}
+.addschedule-container .vertical-container:nth-child(3) {
+  flex: 3;
+}

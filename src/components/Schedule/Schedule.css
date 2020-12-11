@@ -1,0 +1,22 @@
+.schedule-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+}
+
+.schedule-container:last-child {
+  border-bottom: 1px solid gray;
+}
+
+.schedule-container span {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  width: 100%;
+  border-right: 0.5px solid gray;
+  text-align: center;
+}
+
+.schedule-container span:first-child {
+  border-left: 1px solid gray;
+}

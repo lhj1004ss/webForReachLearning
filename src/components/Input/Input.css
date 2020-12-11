@@ -1,0 +1,58 @@
+.input-container {
+  margin: 0.5rem;
+}
+
+.vertical-container {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-container input {
+  width: 100%;
+}
+
+.vertical-container label {
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+label {
+  width: 80px;
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid gray;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  transform: translate(-60%, -10%);
+  width: 60px;
+  height: 60px;
+  color: transparent;
+  background-color: transparent;
+}
+
+#cal {
+  position: absolute;
+  bottom: 40px;
+  border: 0;
+  background-color: transparent;
+  width: 50px;
+  height: 50px;
+  font-size: 3rem;
+  cursor: pointer;
+  outline: none;
+}
+
+#date {
+  position: absolute;
+  bottom: 40px;
+  opacity: 0;
+}
